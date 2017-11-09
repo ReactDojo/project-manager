@@ -15,6 +15,14 @@ var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });
 var db = mongoose.connection;
 
+db.on('error', function () {
+    console.log('Connection error to MongoDB')
+});
+
+db.once('open', function () {
+    console.log('MongoDB Connected');
+});
+
 // using webpack-dev-server and middleware in development environment
 if (process.env.NODE_ENV !== 'production') {
     var webpackDevMiddleware = require('webpack-dev-middleware');
@@ -22,7 +30,6 @@ if (process.env.NODE_ENV !== 'production') {
     var webpack = require('webpack');
     var config = require('./webpack.config');
     var compiler = webpack(config);
-
     app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
     app.use(webpackHotMiddleware(compiler));
 }
@@ -32,26 +39,18 @@ app.use(express.static(path.join(__dirname, 'public')))
     .use(bodyParser.json())
     .use(cookieParser());
 
-app.get('/', function (request, response) {
-    response.sendFile(__dirname + '/public/index.html')
+app.get('/api', function(req, res) {
+    res.send('api');
 });
 
-app.get('/api', function (request, response) {
-    response.json({ message: 'API Initialized!' });
+app.get('/api/projects', function(req, res) {
+    
+    res.send('api-projects');
 });
 
-app.get('/api-docs', function (request, response) {
-    response.sendFile(__dirname + '/public/api-docs/index.html');
+app.use('/api-docs', function(req, res) {
+    res.send('api-docs');
 });
 
-db.on('error', function () {
-    console.log('Connection error to MongoDB')
-});
-
-db.once('open', function () {
-    console.log('MongoDB Connected');
-});
-
-//server.listen(process.env.PORT, () => console.log('Server running on ' + process.env.PORT));
 
 exports.app = functions.https.onRequest(app);

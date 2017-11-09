@@ -7,7 +7,7 @@ class NavBar extends Component {
     return (
       <div className="navbar navbar-inverse">
         <div className="navbar-header">
-          <a className="navbar-brand" href="index.html"><img src="default/assets/images/logo_light.png" alt="" /></a>
+          <a className="navbar-brand" href="index.html"><img src="template/assets/images/logo_light.png" alt="" /></a>
 
           <ul className="nav navbar-nav pull-right visible-xs-block">
             <li><a data-toggle="collapse" data-target="#navbar-mobile"><i className="icon-tree5"></i></a></li>

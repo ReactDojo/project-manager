@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import './Login.css';
 
@@ -36,7 +37,7 @@ class Login extends Component {
                   </div>
 
                   <div class="text-center">
-                    <a href="login_password_recover.html">Forgot password?</a>
+                    <Link to="/forgotpassword">Forgot password?</Link>
                   </div>
                 </div>
               </form>
