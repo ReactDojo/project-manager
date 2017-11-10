@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import './Login.css';
 
 class Login extends Component {
   render() {
@@ -33,7 +32,7 @@ class Login extends Component {
                   </div>
 
                   <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 position-right"></i></button>
+                    <Link to="/dashboard" className="btn btn-primary btn-block">Sign in <i class="icon-circle-right2 position-right"></i></Link>
                   </div>
 
                   <div class="text-center">
