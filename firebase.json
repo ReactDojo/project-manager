@@ -11,17 +11,6 @@
         "source": "**",
         "function": "app"
       }
-    ],
-    "headers": [
-      {
-        "source": "build.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=0"
-          }
-        ]
-      }
     ]
   }
 }
