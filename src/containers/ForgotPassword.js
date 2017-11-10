@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NavBar from '../components/NavBar';
-import './ForgotPassword.css';
 
 class ForgotPassword extends Component {
   render() {
@@ -18,7 +17,7 @@ class ForgotPassword extends Component {
                   </div>
 
                   <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Your email" />
+                    <input type="email" class="form-control" placeholder="Your email" required />
                     <div class="form-control-feedback">
                       <i class="icon-mail5 text-muted"></i>
                     </div>
