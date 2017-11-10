@@ -5,8 +5,7 @@ import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import ForgotPassword from './ForgotPassword';
-
-import './App.css';
+import Dashboard from './Dashboard';
 
 class App extends Component {
   render() {
@@ -17,6 +16,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/forgotpassword" component={ForgotPassword} />
+          <Route path="/dashboard" component={Dashboard} />
         </Switch>
       </Router>
     );
